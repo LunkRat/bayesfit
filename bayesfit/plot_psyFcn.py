@@ -28,7 +28,8 @@ def plot_psyfcn(data,
                 metrics,
                 log_xscale = False, 
                 scale_pnts = True,
-                estimate_type = 'MAP'):
+                estimate_type = 'MAP',
+                return_fig = False):
     """Plots psychometric function from fitted model.
     
     Keyword arguments:
@@ -115,4 +116,7 @@ def plot_psyfcn(data,
     ax.xaxis.set_tick_params(labelsize=13)
     ax.yaxis.set_tick_params(labelsize=13)
     plt.tight_layout()
-    plt.show()
+    if return_fig:
+        return fig
+    else:
+        plt.show()
